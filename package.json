@@ -1,0 +1,17 @@
+{
+  "name": "gitblog",
+  "version": "1.0.0",
+  "description": "reone1 gitblog",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Reone1",
+  "license": "ISC",
+  "devDependencies": {
+    "vuepress": "^1.8.2",
+    "@vuepress/theme-blog": "^2.3.3"
+  }
+}
