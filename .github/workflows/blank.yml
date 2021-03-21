@@ -40,5 +40,7 @@ jobs:
         run: |
           cd docs/.vuepress/dist
           git init
+          git add .
+          git commit -m "deploy"
           git remote add origin https://github.com/Reone1/uoM.git
           git push origin master:gh-pages
