@@ -34,9 +34,10 @@ jobs:
         run: |
           git config --global user.name "Reone1"
           git config --global user.email j901207@gmail.com
-          
+
       - name: push gh-pages repo
         run: |
-          cd docs/.vuepress/dist; git init
+          cd docs/.vuepress/dist
+          git init
           git remote add origin https://github.com/Reone1/uoM
           git push origin master:gh-pages
