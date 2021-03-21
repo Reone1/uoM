@@ -38,12 +38,12 @@ jobs:
 
       - name: create new commit
         run: |
-          cd docs/.vuepress/dist
           git init
           git add .
           git commit -m "deploy"
-          
+
       - name: push repo
         run: |
+          cd docs/.vuepress/dist
           git remote set-url origin https://github.com/Reone1/uoM.git
           git push -f -u origin master:gh-pages
