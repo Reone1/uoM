@@ -1,7 +1,7 @@
 module.exports = 
 {
-  title: 'VuePress Blog Example', // Title for the site. This will be displayed in the navbar.
-  description: 'Just playing around',
+  title: 'uoM', // Title for the site. This will be displayed in the navbar.
+  description: 'jaewon github pages for blog',
   base:'/uoM/',
   themeConfig: {
     sidebar: [
