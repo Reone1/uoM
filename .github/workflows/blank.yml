@@ -34,8 +34,9 @@ jobs:
         run: |
           git config --global user.name "Reone1"
           git config --global user.email j901207@gmail.com
-          git remote add origin https://github.com/Reone1/uoM
-      - name: Run a multi-line script
+          
+      - name: push gh-pages repo
         run: |
           cd docs/.vuepress/dist; git init
+          git remote add origin https://github.com/Reone1/uoM
           git push origin master:gh-pages
