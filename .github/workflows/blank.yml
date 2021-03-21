@@ -38,6 +38,7 @@ jobs:
 
       - name: create new commit
         run: |
+          cd docs/.vuepress/dist
           git init
           git add .
           git commit -m "deploy"
