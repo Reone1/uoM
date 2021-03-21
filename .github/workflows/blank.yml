@@ -46,5 +46,5 @@ jobs:
       - name: push repo
         run: |
           cd docs/.vuepress/dist
-          git remote add origin https://github.com/Reone1/uoM.git
+          git remote set-url origin git@github.com:Reone1/uoM.git
           git push -f origin master:gh-pages
