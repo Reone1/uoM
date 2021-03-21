@@ -36,11 +36,14 @@ jobs:
           git config --global user.email j901207@gmail.com
           git config --global init.defaultBranch master
 
-      - name: push gh-pages repo
+      - name: create new commit
         run: |
           cd docs/.vuepress/dist
           git init
-          git remote set-url origin https://github.com/Reone1/uoM.git
           git add .
           git commit -m "deploy"
+          
+      - name: push repo
+        run: |
+          git remote set-url origin https://github.com/Reone1/uoM.git
           git push -f -u origin master:gh-pages
