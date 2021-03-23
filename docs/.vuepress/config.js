@@ -1,3 +1,4 @@
+const dirTree = require('./dirTree.js')
 module.exports = 
 {
   title: 'uoM', // Title for the site. This will be displayed in the navbar.
@@ -9,10 +10,7 @@ module.exports =
         title: 'TIL',   // required
         path: '/TIL/',      // optional, link of the title, which should be an absolute path and must exist
         sidebarDepth: 1,    // optional, defaults to 1
-        children: [
-          '/TIL/TIL-20210320',
-          '/TIL/TIL-20210321'
-        ]
+        children: dirTree('TIL')
       },
     ],
     nav: [
