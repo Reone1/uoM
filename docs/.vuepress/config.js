@@ -12,15 +12,15 @@ module.exports =
         sidebarDepth: 1,    // optional, defaults to 1
         children: dirTree('TIL')
       },
-      {
+      /* {
         title:'Nodejs',
         path:'/Nodejs/',
         children: dirTree('Nodejs')
-      },
+      }, */
     ],
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Github', link: 'http://github.com/Reone1' }
+      { text: 'Github', link: 'http://github.com/Reone1/uoM' }
     ],
   }
 }
