@@ -4,5 +4,4 @@
 .gitignore
 /docs/src/*
 
-/docs/React/*
 /docs/Nodejs/*
