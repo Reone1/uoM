@@ -2,6 +2,5 @@
 /docs/.vuepress/dist/*
 
 .gitignore
-/docs/src/*
 
 /docs/Nodejs/*
