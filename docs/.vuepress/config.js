@@ -18,11 +18,16 @@ module.exports =
         sidebarDepth: 1,    // optional, defaults to 1
         children: dirTree('React')
       },
-      /* {
+      {
         title:'Nodejs',
         path:'/Nodejs/',
         children: dirTree('Nodejs')
-      }, */
+      },
+      { 
+        title: 'Database',
+        path:'/Database/',
+        children:dirTree('Database')
+      }
     ],
     nav: [
       { text: 'Home', link: '/' },
