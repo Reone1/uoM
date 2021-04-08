@@ -22,6 +22,7 @@ const makeTree = (path) => {
     return isFile(path, dirName) && !/^README/.test(dirName)
   })
 }
+
 const dirTree = (defaultPath) => {
   const menus = readSideMenu(defaultPath)
   return menus.map(menu => {
