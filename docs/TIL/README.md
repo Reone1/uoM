@@ -1,6 +1,23 @@
-# TIL
-- 배운내용을 간략하게 기록해본다.  
- 큰 내용은 따로 정리해보도록 한다.  
-- [TIL-20210320](TIL-20210320.html)  
-- [TIL-20210321](TIL-20210321.html)  
-- [TIL-20210322](TIL-20210322.html)  
+---
+dirPath: "TIL"
+---
+
+# 🏋️‍♂️ TIL
+
+배운내용을 간단하게 정리하는 글  
+당일의 스택들을 정리하기 위해 작성한다.
+매일 꾸준히 하는것을 기록하자
+
+# list
+
+<listAnchor :list="list"></listAnchor>
+
+<script>
+  export default {
+    computed: {
+      list: function () {
+        return this.$page.TIL
+      }
+    }
+  }
+</script>

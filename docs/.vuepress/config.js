@@ -1,16 +1,16 @@
-const dirTree = require('./dirTree.js')
-const defaultPath = './docs'
+const treeLoader = require("./dirTree.js");
+const defaultPath = "./docs";
 
-module.exports = 
-{
-  title: 'uoM', // Title for the site. This will be displayed in the navbar.
-  description: 'jaewon github pages for blog',
-  base:'/uoM/',
+module.exports = {
+  title: "uoM", // Title for the site. This will be displayed in the navbar.
+  description: "jaewon github pages for blog",
+  base: "/uoM/",
+  plugins: [require("./plugins/dirTree")],
   themeConfig: {
-    sidebar: dirTree(defaultPath),
+    sidebar: treeLoader.dirTree(defaultPath),
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Github', link: 'http://github.com/Reone1/uoM' }
+      { text: "Home", link: "/" },
+      { text: "Github", link: "http://github.com/Reone1/uoM" },
     ],
-  }
-}
+  },
+};
