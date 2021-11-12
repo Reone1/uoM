@@ -46,3 +46,49 @@ cypress는 `cypress-io/github-actions@v2`를 통해 github workflow에서 모듈
 
 dev => unit test (component test)
 release => e2e test (with server)
+
+## github actions Setting
+
+github에서 repository를 생성하고 actions 탭으로 workflow를 생성할 수 있다.
+market place에서 이미 생성된 많은 workflow를 참조해 사용할 수 있다.
+
+**actions을 통해 cypress test를 진행하기**
+
+```yml
+name: PR Test
+
+on:
+  pull_request:
+    branches: [dev]
+
+jobs:
+  cypress_run:
+    runs-on: ubuntu-latest
+    steps:
+      # checkout
+      - name: checkout
+        uses: actions/checkout@v2
+      # cypress run
+      - name: Cypress Components test
+        uses: cypress-io/github-action@v2
+        with:
+          command: npm run test:cypress-ct -- ${{ secrets.CYPRESS_RECORD_KEY }} -t ${{ github.event_name }}
+          # package.json script => "test:cypress-ct": cypress run-ct -b chrome --record -k
+        env:
+          COMMIT_INFO_MESSAGE: ${{ github.event.pull_request.title }}
+```
+
+다음과 같은 workflow를 통해서 cypress 테스트를 진행할 수 있다.
+checkout을 통해 브랜치 접근권한을 변경하고
+
+cypress 테스트를 통해서 전체 테스트 코드중 comopnent 테스트를 실행하게 된다.
+copmonent테스트에는 사전에 준비해야하는게 두 가지있다.
+
+record 기능은 사용하지 않는다면 한 가지로 줄일 수 있다.
+레코드 기능을 사용한다면 dashboard를 통해 테스트 기록을 확인하고 해당 테스트가 어떻게 실패한지를 gui 기반으로 볼 수 있다.
+
+`CYPRESS_RECORD_KEY`는 record기능을 사용하는데 필요한 기능으로써 `--record -k <record_key>`를 제거해서 record기능을 비활성화 할 수 있다.
+dashboard는 무료로 사용할 경우 최대 3명이 사용가능하다.
+
+다음 설정해야 하는것은 cypress.json파일을 수정해주어야 한다.
+component테스트를 위한 별도의 설정이 필요하고 unit(component) 테스트 파일의 경로나 spec 파일의 확장자 등을 설정할 수 있다.
