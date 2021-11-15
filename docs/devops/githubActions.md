@@ -1,6 +1,6 @@
 # Github Actions으로 배포 자동화 하기
 
-> github actions는 public repository는 actions를 더 자유롭게 사용할 수 있습니다. 무료로 제공하고, private repository는 2000분/월 무료 시간을 주고, 추가 분에 대해 0.008$를 분단 추가 과금하게 되어있습니다. 회사 계정에서 큰 요금제의 회원을 사용한다면 달라질 수 있습니다.
+> github actions는 public repository는 actions를 더 자유롭게 사용할 수 있습니다. 무료로 제공하고, private repository는 2000분/월 무료 시간을 주고, 추가 분에 대해 0.008\$를 분단 추가 과금하게 되어있습니다. 회사 계정에서 큰 요금제의 회원을 사용한다면 달라질 수 있습니다.
 
 git repository에서 `actions`라는 탭을 이용해 간단한게, actions를 이용해 볼 수 있습니다.
 
@@ -42,10 +42,13 @@ front end에서 e2e테스트를 위해 사용하는 라이브러리로 react-tes
 테스트용 dev server 없이도 구동이 가능하며, record 기능을 통해 해당 컴포넌트를 웹상에서 어떻게 작동하는지도 확인해 볼수 있다.
 
 cypress는 `cypress-io/github-actions@v2`를 통해 github workflow에서 모듈 형태로 불러와 사용할 수 있으며,
+
 현재 배포 전략에서는 dev버전 테스트와 release 버전 테스트를 다르게 구성해야 한다.
 
-dev => unit test (component test)
-release => e2e test (with server)
+**배포 전략에 따른 테스트 진행**
+
+- dev => unit test (component test)
+- release => e2e test (with server)
 
 ## github actions Setting
 
@@ -82,7 +85,7 @@ jobs:
 checkout을 통해 브랜치 접근권한을 변경하고
 
 cypress 테스트를 통해서 전체 테스트 코드중 comopnent 테스트를 실행하게 된다.
-copmonent테스트에는 사전에 준비해야하는게 두 가지있다.
+copmonent테스트에는 사전에 준비해야하는게 두 가지가 있다.
 
 record 기능은 사용하지 않는다면 한 가지로 줄일 수 있다.
 레코드 기능을 사용한다면 dashboard를 통해 테스트 기록을 확인하고 해당 테스트가 어떻게 실패한지를 gui 기반으로 볼 수 있다.

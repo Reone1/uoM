@@ -23,7 +23,17 @@
       </ul>
     </section>
     <section>list of contents</section>
-    <section>mxncommerce Full-stack engineer</section>
-    <section>github, blog</section>
+    <Career />
+    <section>
+      <h2>Connect</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/reone1">Git hub</a>
+          <span>
+            블로그 글을 작성하거나 개인 프로젝트를 진행하고 있습니다.
+          </span>
+        </li>
+      </ul>
+    </section>
   </div>
 </template>
