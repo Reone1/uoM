@@ -7,7 +7,7 @@ git repository에서 `actions`라는 탭을 이용해 간단한게, actions를 �
 `yml`형식의 파일을 작성해 workflow를 작성할 수 있고,  
 여러 workflow를 작성해 pipeline형식으로 실행하는 것도 가능합니다.
 
-## actions initialize
+## Actions initialize
 
 초기 세팅되어 있는 actions를 살펴보면, 현재 레포지토리에 push 되었을 때, actions log에 `hello world`를 출력하는 기능을 하고 있습니다.
 여기서 살펴볼 수 있는점은, `job`의 형태로 각 로직을 분리하고 구동 환경을 설정할 수 있습니다. 현재는 ubuntu-latest를 사용하고, `name`을 기준으로한 `step`을 사용하여 각 jobs에서 순차적으로 이루어져야 할 일을 나눌 수 있습니다.
