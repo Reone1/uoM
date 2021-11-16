@@ -93,5 +93,125 @@ record 기능은 사용하지 않는다면 한 가지로 줄일 수 있다.
 `CYPRESS_RECORD_KEY`는 record기능을 사용하는데 필요한 기능으로써 `--record -k <record_key>`를 제거해서 record기능을 비활성화 할 수 있다.  
 dashboard는 무료로 사용할 경우 최대 3명이 사용가능하다.
 
+[cypress설정과 관련된 정리글](./cypress.md)
+
 다음 설정해야 하는것은 cypress.json파일을 수정해주어야 한다.  
 component테스트를 위한 별도의 설정이 필요하고 unit(component) 테스트 파일의 경로나 spec 파일의 확장자 등을 설정할 수 있다.
+
+`cypress.json`에 정상적인 테스트 경로를 구성했다면, 해당 workflow를 통해서 통합 테스트를 진행한 결과를 볼 수 있다.
+
+## actions를 Docker build 구성
+
+github action은 PR 발생시에 두 가지 정보를 가지고 동작하게 된다.
+
+- 현재 PR을 요청한 commit
+- PR을 요청 받은 branch
+
+요청 받은 branch에 workflow가 있거나 요청한 commit에 workflow가 있다면 실행되는 것을 통해 알 수 있다.  
+push를 하게 되면, push된 code, 이전 branch의 상태를 기준으로 동작한다.
+
+`ations`안에서의 `.` 경로는 현재 commit의 root directory인 것이다.  
+build를 하기위한 `Dockerfile`을 `root directory`에 생성한다.
+
+```docker
+FROM node:16 AS Builder
+
+RUN npm install -g npm@8.1.3
+
+# Create Directory
+RUN mkdir /usr/src/app
+WORKDIR /usr/src/app
+COPY package*.json /usr/src/app/
+COPY . /usr/src/app
+RUN npm install
+RUN npm run build
+
+CMD ["npm", "run", "start"]
+```
+
+빌드하는데 사용하는 npm버전이 달라 `error가` 발생해 `npm` 버전을 변경하는 `script를` 가장 먼저 실행해 주었다.
+이후 작업할 `directory를` 생성하고 `cd`와 같은 역할을 하는 `WORKDIR`로 작업 경로를 변경한다.
+
+이후, `package*.json`을 COPY해 docker의 작업 dir로 복사한다.
+현재 root dir에 있는 모든 작업 파일을 docker의 작업 경로에 복사한다.
+
+`npm i`, `npm run build`를 통해서 패키지를 설치하고, 빌드를 진행한다.
+
+`이제 docker build . -t <tagname>`을 root directory에서 실행하면 docker image를 생성할 수 있다.
+
+생성된 docker image를 docker hub에 올려 deploy에 사용할 수 있다.
+
+## docker hub image로 배포 진행하기
+
+해당 과정은 github-actions를 이용해 진행할 수 있다.
+CI/CD 전략에 따른 배포 단계는 dev / release로 나눌 수 있다.
+
+PR이 dev에 Merge될 때,  
+dev를 빌드하고, 배포하도록 되어있다.
+
+이 단계를 구성해보면,
+pr이 merge되는 event에 대한 workflow를 생성한다.
+
+```yml
+- name: dev server deployment
+
+- jobs:
+    build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
+
+      - name: Docker build & Push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          context: ./
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGE }}:${{ github.run_id }}, ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGE }}:latest
+
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
+
+  deployment:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      # Steps represent a sequence of tasks that will be executed as part of the job
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSHKEY }}
+          passphrase: ${{ secrets.PASSPHRASES }}
+          script: |
+            docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGE}}:latest
+            docker stop nextjs
+            docker run --rm --name nextjs -dp 80:3000 ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_IMAGE}}:latest
+```
+
+> `secrets`은 repository setting에서 설정할 수 있습니다.
+
+현재는 단순히 docker image를 받아아와 외부 포트 80과 연결해주는 방식을 사용하도록 구성했습니다.
+
+각각의 jobs은 서로 다른 computing환경을 가지고 있어 docker에 push, pull 권한이 필요한 이미지인 경우 login을 꼭 진행해야 합니다.
+
+`docker/login-action@v1`을 통해 docker hub에 접속할 수 있는 login을 할 수 있습니다.
+
+이후, deploy과정은 직접 cloud computer에 ssh로 접속해 docker image를 내려받고 container를 교체하는 방식으로 구성되어 있습니다.
+
+container를 교체하는 순간에는 서비스 장애가 발생할 수 있는 여지가 있어, 이후 개발서버를 nginx와 함께 배포하여 무중단 배포를 적용할 계획입니다.
