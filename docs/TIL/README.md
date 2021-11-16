@@ -8,8 +8,6 @@ dirPath: "TIL"
 당일의 스택들을 정리하기 위해 작성한다.
 매일 꾸준히 하는것을 기록하자
 
-# list
-
 <listAnchor :list="list"></listAnchor>
 
 <script>
