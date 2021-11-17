@@ -6,11 +6,12 @@ module.exports = {
   description: "jaewon github pages for blog",
   base: "/uoM/",
   plugins: [require("./plugins/dirTree")],
+  smoothScroll: true,
   themeConfig: {
     sidebar: treeLoader.dirTree(defaultPath),
     nav: [
       { text: "Home", link: "/" },
-      { text: "Github", link: "http://github.com/Reone1/uoM" },
+      { text: "Github", link: "http://github.com/Reone1" },
     ],
   },
 };

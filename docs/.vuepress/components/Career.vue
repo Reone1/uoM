@@ -23,20 +23,6 @@
           term: '2020.8 ~ 재직중',
           description: 'Totaly global commerce service',
         }"
-        v-bind:projects="[
-          {
-            title: 'VPL app',
-            duration: '2020.8 ~ 2020.10',
-            description:
-              '외부 packaging System과 Web service간 API연동 및 데이터 처리',
-          },
-          {
-            title: 'BackOffice Admin',
-            duration: '2020.10 ~',
-            description:
-              '전체 서비스 구조 개편에 맞는 BackOffice 어플리케이션 개발.',
-          },
-        ]"
       />
     </ul>
   </div>
@@ -46,4 +32,18 @@ import CareerItem from "./CareerItem.vue";
 export default {
   components: { CareerItem },
 };
+// v-bind:projects="[
+//           {
+//             title: 'VPL app',
+//             duration: '2020.8 ~ 2020.10',
+//             description:
+//               '외부 packaging System과 Web service간 API연동 및 데이터 처리',
+//           },
+//           {
+//             title: 'BackOffice Admin',
+//             duration: '2020.10 ~',
+//             description:
+//               '전체 서비스 구조 개편에 맞는 BackOffice 어플리케이션 개발.',
+//           },
+//         ]"
 </script>
