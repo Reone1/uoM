@@ -3,7 +3,7 @@
     <h1>Jaewon Blog</h1>
     <section>
       <div></div>
-      <div>그래도 잘 모르겠다면, 다시 한번 해보자</div>
+      <p>그래도 잘 모르겠다면, 다시 한번 해보자</p>
       <div>이해가 안되면 다음에 다시보자</div>
     </section>
     <section>
