@@ -101,11 +101,21 @@ export default {
 
 이와 같은 방법의 categorize는 해당 컴포넌트를 한 폴더에 모아서 관리하는데 도움이 됩니다.
 
+현재 컴포넌트를 할당 할 수 있습니다.
+
+```js
+export default {
+  title: "atoms/Task",
+  component: Task,
+};
+```
+
 다음으로 argType을 설정할 수 있습니다.
 
 ```js
 export default {
   title: "atoms/Task",
+  component: Task,
   argType: {
     task: {
       name: 'task'
@@ -125,6 +135,20 @@ export default {
   },
 };
 ```
+
+- `argTypes`는 component의 props를 정의하고 `controls` 표시되는 내용을 정리하기 위한 내용입니다.
+- `controls`는 storybook web상에서 component의 argument 변화를 인위적으로 변경할 수 있는 기능을 합니다.
+
+- `control` 의 타입을 정하여 다양한 형태의 input을 조절하는 방식을 사용할 수 있습니다.
+  toggle, range, color table등 여러가지 input source를 지원하기 때문에, component가 사용하는 argument의 값이 어떤 type인지에 따라서 control.type을 잘 정리해주면 사용하는데 큰 도움이 됩니다.
+
+- `defaultValue`를 통해 기본값 설정을 할 수 있습니다.
+
+- `name`은 argument의 control table name을 정의 합니다.  
+  사용하지 않는경우 template의 arg key에 의해 결정 됩니다. 값을 비워 놓는경우 control table에 이름이 표시되지 않습니다.
+
+- `type`은 현재 argument의 type을 정의합니다. 여기서의 type은 자료형을 뜻하지 **않습니다.**  
+  argument를 표시할지, 변경 가능하게 할것인지 등 이러한 타입을 결정합니다.
 
 ## storybook의 장점
 
