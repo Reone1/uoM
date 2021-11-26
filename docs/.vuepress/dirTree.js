@@ -24,7 +24,6 @@ const makeTree = (path) => {
 };
 
 const dirTree = (defaultPath) => {
-  console.log(defaultPath);
   const menus = readSideMenu(defaultPath);
   return menus.map((menu) => {
     const files = makeTree(defaultPath + `/${menu}`);
