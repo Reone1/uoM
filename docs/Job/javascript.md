@@ -121,6 +121,8 @@ name = "reone1";
 
 이를 통해 let, conts, var는 모두 호이스팅을 지원하지만, const, let은 TDZ로 인해 error를 발생시킨다.
 
+실행 컨텍스트 생성 시 렉시컬 스코프 내의 선언이 끌어올려 지는 게 호이스팅이다.
+
 ## call apply bind 에 대해 설명해 보세요. 언제 다르게 쓰나요?
 
 모두 context와 관련이 있는 functiona prototype의 method이다.
@@ -202,7 +204,7 @@ heap에 값과 주소를 저장하여 다음 위치를 저장하는 방식
 
 이로 인해 lazy import나 dynamic import를 통해서 번들의 크기를 줄이는 과정이 필요하게 됩니다.
 
-<!-- ## 자바스크립트 Prototype에 관해 설명해주세요.-->
+## 자바스크립트 Prototype에 관해 설명해주세요.
 
 ## promise에 대해서 설명해 주세요
 
