@@ -1,6 +1,6 @@
 <template>
   <li>
-    <h2>{{ career.company }}</h2>
+    <h3>{{ career.company }}</h3>
     <div>{{ career.term }}</div>
     <div>{{ career.description }}</div>
     <ul>

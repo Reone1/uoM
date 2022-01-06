@@ -61,7 +61,7 @@ E2E, component test의 큰 차이점은 실제 서비스에 적용된 component�
 
 이로 인해서 context가 다르게 설정되어 context를 인위적으로 component에 제공할 수 있는 처리를 해줘야 한다.
 
-현재 서비스에서는 Apollo client와 recoil State를 사용하고 있기 때문에, 최소 두 두개의 context를 심어주어야 했다.
+현재 서비스에서는 Apollo client와 Recoil State를 사용하고 있기 때문에, 최소 두 개의 context를 심어주어야 했다.
 
 해당 과정은 모든 테스트 코드에서 사용할 수 있는 Testing module을 HOC 형태로 구성하여 context를 심어서 comopnent를 생성할 수 있도록 구성했다.
 
