@@ -1,6 +1,5 @@
 ---
 refernce: https://devtrium.com/posts/how-use-react-context-pro
-meta: react,context,react
 ---
 
 ## context란 무엇인가
