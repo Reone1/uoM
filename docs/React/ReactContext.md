@@ -1,6 +1,16 @@
 ---
 refernce: https://devtrium.com/posts/how-use-react-context-pro
+meta: react,context,react
 ---
+
+## context란 무엇인가
+
+> 깊은 곳까지 들어가면 끝이 없다.
+
+context는 프로그래밍에서 많은 의미를 갖는다. 이 글에서는 React context API에 대한 설명을 위한 간단한 내용만 다룹니다.
+context는 사전적 의미로 문맥을 뜻하며, 코드가 실행되는 상태라고 생각 할 수 있습니다.
+
+React context API는 컴포넌트의 렌더링에서 해당 context의 상태를 참조하여 사용하는 것으로, 실행 상황에서의 필요한 값을 참조하는 용도로 많이 사용됩니다.
 
 ## Context API
 
