@@ -1,4 +1,10 @@
-# cookie?? :cookie:
+---
+meta:
+  - name: keywords
+    content: http,cookie,session
+---
+
+# cookie와 세션 :cookie:
 
 ## cookie란 무엇인가
 
@@ -27,3 +33,33 @@
 - `lax`: cross-origin이 아닌 경우 get요청에 대해서만 cookie를 사용할 수 있다.
 - `strict`: cross-origin인 경우에는 쿠키를 사용할 수 없다.
 - `none`: 모든 요청에 대해서 쿠키를 사용할 수 있다. 단, `secure`가 `true`이어야만 한다.
+
+## Session 이란
+
+쿠키를 통해 Session ID를 생성하고 해당 Session ID를 통해 서버에 저장된 Session Data를 사용하는 방식이다.
+Session ID는 Cookie를 통해 저장되며, 해당 쿠키는 클라이언트가 종료되거나 새로고침 되는 순간에 사라지는 메모리에 저장되는 Cookie를 사용한다.
+
+## express를 통한 Session의 사용
+
+먼저 express-session library를 설치하여 도움을 받을 수 있습니다.
+
+```bash
+$ npm i express-session
+```
+
+해당 라이브러리를 통해 express server에서 session을 생성하고 저장할 수 있게 됩니다.
+
+```js
+const express = require("express");
+const session = require("express-session");
+const app = express();
+
+app.use(
+  session({
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true },
+  })
+);
+```

@@ -121,7 +121,7 @@ name = "reone1";
 
 이를 통해 let, conts, var는 모두 호이스팅을 지원하지만, const, let은 TDZ로 인해 error를 발생시킨다.
 
-실행 컨텍스트 생성 시 렉시컬 스코프 내의 선언이 끌어올려 지는 게 호이스팅이다.
+간단하게 정리하면, 실행 컨텍스트 생성 시 렉시컬 스코프 내의 선언이 끌어올려 지는 게 호이스팅이다.
 
 ## call apply bind 에 대해 설명해 보세요. 언제 다르게 쓰나요?
 
@@ -207,8 +207,6 @@ heap에 값과 주소를 저장하여 다음 위치를 저장하는 방식
 
 이로 인해 lazy import나 dynamic import를 통해서 번들의 크기를 줄이는 과정이 필요하게 됩니다.
 
-## 자바스크립트 Prototype에 관해 설명해주세요.
-
 ## promise에 대해서 설명해 주세요
 
 비동기 처리를 위한 하나의 메서드로 es6에서 도입된 문법입니다.
@@ -216,6 +214,9 @@ Promise 객체는 resolve를 통해 return을 발생하고 그 전까지의 처�
 모든 실행 stack이 비워진 이후에 then, catch 명령어를 실행하게 됩니다.
 
 ## Array prototype splice 와 slice의 차이점은 무엇인가요
+
+원본 데이터에 영향을 주는가 주지 않는가에 큰 차이가 있다.
+splice같은 경우는 실제 데이터 array가 변화하게 되고, slice를 이용하면 원본 데이터를 그대로 둔 채 새로운 Array return을 받을 수 있게 된다.
 
 ## OOP의 4가지 특징과 javascript를 활용하여 OOP스럽게 개발해 본 경험이 있다면 이야기해 주세요
 
