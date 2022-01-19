@@ -5,7 +5,10 @@ module.exports = {
   title: "uoM TechLog", // Title for the site. This will be displayed in the navbar.
   description: "jaewon github pages for blog",
   base: "/uoM/",
-  plugins: [["sitemap", { hostname: "https://reone1.github.com/uoM/" }]],
+  plugins: [
+    [require("./plugins/dirTree")],
+    ["sitemap", { hostname: "https://reone1.github.com/uoM/" }],
+  ],
   smoothScroll: true,
   themeConfig: {
     sidebar: treeLoader.dirTree(defaultPath),

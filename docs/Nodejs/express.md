@@ -1,3 +1,10 @@
+---
+title: "Express는 무엇인가"
+meta:
+  - name: keywords
+    content: nodejs, express, web-server
+---
+
 # Express
 
 ## express란 ?
@@ -47,3 +54,35 @@ package.json에서 script를 수정한다.
 실 서버를 배포하여 사용하기 위해선 추가적인 설정이 필요하지만, 현재 local test를 위한 최소한의 조건으로 서버를 실행할 수 있다.
 
 터미널에서 node process를 종료하면 해당 서버를 종료할 수 있다. (cmd + c)
+
+express는 이와 같은 방식으로 간단히 WAS를 구성할 수 있다.
+
+nodejs만을 가지고 http 서버를 구축하려면 다음과 같은 방식으로 구현할 수 있다.
+
+```js
+const http = require("http");
+const fs = require("fs");
+
+const app = http.createServer(function (request, response) {
+  let url = request.url;
+
+  if (request.url == "/") {
+    url = "/index.html";
+  }
+
+  if (request.url == "/favicon.ico") {
+    response.writeHead(404);
+    response.end();
+    return;
+  }
+
+  response.writeHead(200);
+  response.end(fs.readFileSync(__dirname + url));
+});
+
+app.listen(3000, () => {
+  console.log("listen sever 3000 port");
+});
+```
+
+순수 nodejs 모듈을 사용하여 web server를 구축할 때와 큰 차이점은 없지만,

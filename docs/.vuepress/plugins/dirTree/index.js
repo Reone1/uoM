@@ -1,8 +1,7 @@
 const { makeTree } = require("../../dirTree");
 
 const returnTree = async (path) => {
-  const tree = await makeTree(path);
-  return tree;
+  return makeTree(path);
 };
 
 module.exports = (options, ctx) => ({
