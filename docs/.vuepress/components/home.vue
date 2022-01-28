@@ -25,6 +25,16 @@
             <li>mongoose</li>
           </ul>
         </li>
+        <li>
+          Knowledge:
+          <ul>
+            <li>redux</li>
+            <li>recoil</li>
+            <li>docker</li>
+            <li>cypress</li>
+            <li>aws</li>
+          </ul>
+        </li>
       </ul>
     </section>
 
