@@ -13,3 +13,17 @@ dirPath: "Database"
 데이터베이스는 데이터 구조에 따라 크게 두 가지로 구분되는데, SQL, NoSQL 두 가지를 대표적으로 볼 수 있다.
 
 SQL은 Structured Query Language의 약자로 관계형 데이터 베이스를 말한다. 이와 반대인 NoSQL은 데이터의 연관성이 없이 데이터를 저장하는 방식이다.
+
+# Contents list
+
+<listAnchor :list="list"></listAnchor>
+
+<script>
+  export default {
+    computed: {
+      list: function () {
+        return this.$page.Database
+      }
+    }
+  }
+</script>
