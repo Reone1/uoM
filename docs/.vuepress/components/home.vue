@@ -1,13 +1,20 @@
 <template>
   <div>
     <h1>Jaewon Blog</h1>
+    <code>
+      이 페이지는 vuepress를 이용해 제작, github page를 통해 배포하고 있습니다.
+    </code>
 
     <section>
-      <div class="subtext">
-        이 페이지는 vuepress를 이용해 제작, github page를 통해 배포하고
-        있습니다.
+      <h2>Intro</h2>
+      <div>
+        <div>
+          안녕하세요! <br />
+          현재 MXN Commerce Korea에서 Full-Stack Engineer로 일하고 있는
+          <code>최재원</code>
+          입니다.
+        </div>
       </div>
-      <div></div>
     </section>
 
     <section>

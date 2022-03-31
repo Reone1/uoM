@@ -1,5 +1,5 @@
 ---
-dirPath: testing
+dirPath: Testing
 ---
 
 # Testing
@@ -12,7 +12,7 @@ dirPath: testing
   export default {
     computed: {
       list: function () {
-        return this.$page.testing
+        return this.$page.Testing
       }
     }
   }

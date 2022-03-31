@@ -1,8 +1,8 @@
 ---
-dirPath: "javascript"
+dirPath: Javascript
 ---
 
-# javascript 관련 log
+# Javascript 관련 log
 
 <listAnchor :list="list"></listAnchor>
 
@@ -10,7 +10,7 @@ dirPath: "javascript"
   export default {
     computed: {
       list: function () {
-        return this.$page.javascript
+        return this.$page.Javascript
       }
     }
   }

@@ -114,28 +114,26 @@ const App = () => {
 각 종류에 따라 최대 4가지의 단계를 거친다.
 세 종류는 각각 `mounting, updating, unmounting`이다.
 
-- mounting
+- **Mounting** :
   해당 컴포넌트가 처음으로 그려지는 과정, 클래스를통해 새로운 객체를 만드는 과정이라고 볼 수 있다.
 
-1. 생성자를 통해서 컴포넌트의 state, method등을 설정한다.
-2. render메소드를 통해 해당 컴포넌트를 virtual DOM에 적용한다.
-3. virtual DOM과 real DOM의 차이점을 그려낸다.
-4. componentDidMount가 호출된다.
+  1. 생성자를 통해서 컴포넌트의 state, method등을 설정한다.
+  2. render메소드를 통해 해당 컴포넌트를 virtual DOM에 적용한다.
+  3. virtual DOM과 real DOM의 차이점을 그려낸다.
+  4. componentDidMount가 호출된다.
 
-- updating
-  그려진 컴포넌트가 특정 환경에서 변경되는 경우를 생각해 볼 수 있다.
+- **Updating** : 그려진 컴포넌트가 특정 환경에서 변경되는 경우를 생각해 볼 수 있다.
 
-1. render 메소드를 통해서 변경점을 virtual DOM에 그린다.
-2. virtual DOM과 real DOM의 차이점을 그려낸다.
-3. componentDidUpdate 메소드가 호출 된다.
+  1. render 메소드를 통해서 변경점을 virtual DOM에 그린다.
+  2. virtual DOM과 real DOM의 차이점을 그려낸다.
+  3. componentDidUpdate 메소드가 호출 된다.
 
-- unmounting
-  페이지를 떠나거나 특정 컴포넌트를 제거할 때 발생하는 이벤트이다.
+- **Unmounting** : 페이지를 떠나거나 특정 컴포넌트를 제거할 때 발생하는 이벤트이다.
 
-1. componentWillUnmount 메소드가 호출된다.
+  1. **componentWillUnmount** 메소드가 호출된다.
 
-핵심적인 흐름은 3가지 종류의 상태변화 시점이 있다는 것이다.
-그 안에서 여러가지 메소드가 호출되는 경우가 분기된다.
+핵심적인 흐름은 3가지 종류의 상태변화 시점이 있다는 것이다.  
+그 안에서 여러가지 메소드가 호출되는 경우가 분기된다.  
 브라우저의 정보를 읽어올 수 있는 단계는 메소드 호출단계라는 것을 알 수 있다.
 
 자세한 라이프 사이클은 다른 포스팅을 통해 알아보자

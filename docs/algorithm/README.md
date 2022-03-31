@@ -1,5 +1,21 @@
 ---
-dirPath: "algorithm"
+dirPath: "Algorithm"
 ---
 
-# algorithm
+# Algorithm
+
+# Contents list
+
+---
+
+<listAnchor :list="list"></listAnchor>
+
+<script>
+  export default {
+    computed: {
+      list: function () {
+        return this.$page.Algorithm
+      }
+    }
+  }
+</script>

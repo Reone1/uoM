@@ -1,5 +1,5 @@
 ---
-dirPath: "devops"
+dirPath: "Devops"
 ---
 
 # Devops

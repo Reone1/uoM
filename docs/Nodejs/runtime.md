@@ -6,13 +6,23 @@ Javascript를 통한 소프트웨어 개발에 큰 영향을 주었으며 소프
 
 NodeJS는 어떠한 방식으로 javascript를 실행하게 되는지 알아보자.
 
-javascript 논 블로킹 싱글 스레드 입니다.
+javascript `논-블로킹(Non-blocking)`, `싱글 스레드` 입니다.
 
 Non-blocking은 각 작업의 처리가 완료되기 전에 다음 작업을 할수 없는 상태로 하나의 작업에서 lack이 발생하면 앱을 실행할 수 없게 되어있습니다.
 
 Javascript는 web에서의 Runtime을 고려할 때도 event loop를 중접으로 살펴보아야 한다.
 
 일반적인 동기적 실행만 고려한다면 eventloop가 큰 의미가 없지만, 비동기 (await/async, Promise)를 처리하는 과정에서 event-Loop에 따른 js의 처리 과정을 잘 확인해야 한다.
+
+## Non-blocking vs Blocking
+
+block의 사전적 의미는 흐름을 막는 것을 말한다.
+이처럼 처리 과정에서 다른 일을 막는가와 막지 않는가의 차이가 있다.
+
+블로킹은 사람이 이해하기 쉬운 방식의 일처리 과정이다.
+한가지 일을하는 동안(작업대를 사용하는 동안) 다른 일을 처리하지 못한다.
+
+`그럼 막지 않고 처리를 하는 과정은 어떻게 진행될까?`
 
 ## Reference
 

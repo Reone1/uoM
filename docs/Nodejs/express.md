@@ -85,4 +85,4 @@ app.listen(3000, () => {
 });
 ```
 
-순수 nodejs 모듈을 사용하여 web server를 구축할 때와 큰 차이점은 없지만,
+순수 nodejs 모듈을 사용하여 web server를 구축할 때와 큰 차이점은 없지만, Web server를 구축하는데 필요한 기능들을 제공하고 있어 쉽게 구성 할 수 있다.

@@ -14,6 +14,10 @@ dirPath: "Database"
 
 SQL은 Structured Query Language의 약자로 관계형 데이터 베이스를 말한다. 이와 반대인 NoSQL은 데이터의 연관성이 없이 데이터를 저장하는 방식이다.
 
+# database의 종류
+
+- RDB
+
 # Contents list
 
 <listAnchor :list="list"></listAnchor>

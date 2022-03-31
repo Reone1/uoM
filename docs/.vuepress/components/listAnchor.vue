@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h2>List</h2>
     <ul v-if="list">
       <li v-for="listItem in list" :key="listItem">
         <a :href="listItem + '.html'">{{ listItem }}</a>

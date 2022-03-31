@@ -1,5 +1,5 @@
 ---
-dirPath: "github"
+dirPath: "Github"
 ---
 
 # github
@@ -13,7 +13,7 @@ github를 사용하면서 배운 것들을 정리하고 있습니다.
   export default {
     computed: {
       list: function () {
-        return this.$page.github
+        return this.$page.Github
       }
     }
   }

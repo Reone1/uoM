@@ -1,5 +1,5 @@
 ---
-dirPath: "storybook"
+dirPath: "Storybook"
 ---
 
 # Storybook
@@ -10,7 +10,7 @@ dirPath: "storybook"
   export default {
     computed: {
       list: function () {
-        return this.$page.storybook
+        return this.$page.Storybook
       }
     }
   }
