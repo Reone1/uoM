@@ -10,7 +10,8 @@ module.exports = {
     ["sitemap", { hostname: "https://reone1.github.com/uoM/" }],
   ],
   themeConfig: {
-    logo: "https://avatars0.githubusercontent.com/u/18749057?s=120&v=4",
+    favicon: "https://avatars0.githubusercontent.com/u/18749057?s=120&v=4",
+    logo: "https://ca.slack-edge.com/T0239NMDLTZ-U02CJ1PGF54-c7ee88dcd395-72",
     sidebar: treeLoader.dirTree(defaultPath),
     nav: [
       { text: "Home", link: "/" },

@@ -27,7 +27,6 @@
       </template>
     </Sidebar>
     <div class="sidebar-mask" @click="toggleSidebar(false)" />
-    <footer class="siteFooter">재원</footer>
   </div>
 </template>
 
@@ -36,6 +35,7 @@ import Home from "@theme/components/Home.vue";
 import Navbar from "@theme/components/Navbar.vue";
 import Page from "@theme/components/Page.vue";
 import Sidebar from "@theme/components/Sidebar.vue";
+import ScrollBarEffect from "@theme/components/ScrollBarEffect.vue";
 import { resolveSidebarItems } from "../util";
 
 export default {
@@ -46,6 +46,7 @@ export default {
     Page,
     Sidebar,
     Navbar,
+    ScrollBarEffect,
   },
 
   data() {

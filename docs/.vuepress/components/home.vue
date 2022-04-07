@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="main">
     <h1>Jaewon Blog</h1>
     <code>
       이 페이지는 vuepress를 이용해 제작, github page를 통해 배포하고 있습니다.
