@@ -13,6 +13,13 @@ javascript가 prototype을 선택한 이유로 발생하는 this와 hositing의 
 
 Rosch의 Prototype에 따르면, 프로토 타입은 가장 대표적인 원형(Prototype)을 통해 다양한 범주의 객체를 구성할 수 있다.
 
+많은 prototype기반의 언어가 대부분 도태되었지만, javascript는 Web이라는 환경을 타고 크게 발전하게 되었다.
+
+prototype은 OOP(객체지향 프로그래밍)을 구성하는데 한가지 방법이 될 수 있다.
+객체지향은 encapsulation, abstract, inheritance, polymorphism의 4가지 요소를 가지고 구현합니다.
+
+prototype을 통해 4가지 요소를 구현 할 수 있습니다.
+
 ### class와 prototype은 어떤 차이가 있는가?
 
 java는 대표적인 class기반 oop를 사용한다.
