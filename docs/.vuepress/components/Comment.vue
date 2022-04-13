@@ -16,7 +16,7 @@ export default {
   methods: {
     init() {
       const utterances = document.createElement("script");
-      utterances.setAttribute("issue-term", "pathname");
+      utterances.setAttribute("issue-term", "url");
       utterances.setAttribute("theme", "github-light");
       utterances.setAttribute("repo", `Reone1/uoM`);
       utterances.type = "text/javascript";
