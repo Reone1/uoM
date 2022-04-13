@@ -1,5 +1,5 @@
 <template>
-  <div id="box"></div>
+  <div class="theme-default-content"></div>
 </template>
 
 <script>

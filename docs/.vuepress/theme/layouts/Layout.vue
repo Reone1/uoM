@@ -17,7 +17,7 @@
         <slot name="page-bottom" />
       </template>
     </Page>
-    <Comment />
+    <!-- <Comment /> -->
     <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
       <template #top>
         <slot name="sidebar-top" />

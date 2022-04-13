@@ -4,8 +4,8 @@
 
     <Content class="theme-default-content" />
     <PageEdit />
-
     <PageNav v-bind="{ sidebarItems }" />
+    <Comment />
 
     <slot name="bottom" />
   </main>
