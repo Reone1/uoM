@@ -1,5 +1,5 @@
 <template>
-  <div class="theme-default-content content__default comment">
+  <div class="theme-default-content content__default utt-comment">
     <div id="comment"></div>
   </div>
 </template>
@@ -8,7 +8,7 @@
 export default {
   watch: {
     "$page.path": function () {
-      window.document.querySelector(".comment").innerHTML =
+      window.document.querySelector(".utt-comment").innerHTML =
         '<div id="comment"></div>';
       this.init();
     },
