@@ -17,7 +17,7 @@
         <slot name="page-bottom" />
       </template>
     </Page>
-
+    <Comment />
     <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
       <template #top>
         <slot name="sidebar-top" />
@@ -27,15 +27,6 @@
       </template>
     </Sidebar>
     <div class="sidebar-mask" @click="toggleSidebar(false)" />
-    <script
-      src="https://utteranc.es/client.js"
-      repo="Reone1/uoM"
-      issue-term="pathname"
-      label="Comment"
-      theme="github-light"
-      crossorigin="anonymous"
-      async
-    ></script>
   </div>
 </template>
 
