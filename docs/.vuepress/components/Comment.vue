@@ -1,12 +1,15 @@
 <template>
-  <div class="theme-default-content"></div>
+  <div class="theme-default-content content__default comment">
+    <div id="comment"></div>
+  </div>
 </template>
 
 <script>
 export default {
   watch: {
     "$page.path": function () {
-      this.$el.innerHTML = '<div id="comment"></div>';
+      window.document.querySelector(".comment").innerHTML =
+        '<div id="comment"></div>';
       this.init();
     },
   },
