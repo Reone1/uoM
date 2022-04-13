@@ -45,8 +45,6 @@
       </ul>
     </section>
 
-    <section>list of contents</section>
-
     <Career />
 
     <section>

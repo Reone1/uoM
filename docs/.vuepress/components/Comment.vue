@@ -8,8 +8,7 @@
 export default {
   watch: {
     "$page.path": function () {
-      window.document.querySelector(".utt-comment").innerHTML =
-        '<div id="comment"></div>';
+      window.document.querySelector(".utt-comment").innerHTML = "";
       this.init();
     },
   },
@@ -23,7 +22,7 @@ export default {
       utterances.async = true;
       utterances.crossorigin = "anonymous";
       utterances.src = "https://utteranc.es/client.js";
-      window.document.querySelector("#comment").appendChild(utterances);
+      window.document.querySelector(".utt-comment").appendChild(utterances);
     },
   },
   mounted() {
