@@ -3,6 +3,8 @@ title: "Express는 무엇인가"
 meta:
   - name: keywords
     content: nodejs, express, web-server
+  - property: og:type
+    content: website
 ---
 
 # Express
@@ -57,7 +59,7 @@ package.json에서 script를 수정한다.
 
 express는 이와 같은 방식으로 간단히 WAS를 구성할 수 있다.
 
-nodejs만을 가지고 http 서버를 구축하려면 다음과 같은 방식으로 구현할 수 있다.
+## nodejs만을 가지고 http 서버를 구축하려면 다음과 같은 방식으로 구현할 수 있다.
 
 ```js
 const http = require("http");
@@ -84,5 +86,9 @@ app.listen(3000, () => {
   console.log("listen sever 3000 port");
 });
 ```
+
+<!--
+마크다운으로 주석 처리 가능
+-->
 
 순수 nodejs 모듈을 사용하여 web server를 구축할 때와 큰 차이점은 없지만, Web server를 구축하는데 필요한 기능들을 제공하고 있어 쉽게 구성 할 수 있다.

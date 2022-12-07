@@ -33,8 +33,8 @@ meta:
 
 다음은 공식문서에 있는 `docker-compose.yml`파일의 예시 코드입니다.
 
-```docker
-version: "3.9"  # optional since v1.27.0
+```yml
+version: "3.9" # optional since v1.27.0
 services:
   web:
     build: .
@@ -104,8 +104,8 @@ Dockerfile에서는 `CMD`를 작성하지 않는 방식으로 외부에서 Comma
 
 이후 docker-compose를 통한 deploy를 진행합니다.
 
-```docker
-version: '3'
+```yml
+version: "3"
 services:
   app:
     image: mydockerid/mydockerimage
