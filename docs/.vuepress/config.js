@@ -23,7 +23,7 @@ module.exports = {
   ],
   plugins: [
     [require("./plugins/dirTree")],
-    ["sitemap", { hostname: "https://reone1.github.com/uoM/" }],
+    ["sitemap", { hostname: "https://reone1.github.io/uoM/" }],
   ],
   themeConfig: {
     favicon: "https://avatars0.githubusercontent.com/u/18749057?s=120&v=4",
