@@ -1,11 +1,12 @@
 {
-  "scripts": {
-    "dev": "NODE_OPTIONS=--openssl-legacy-provider vuepress dev docs",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider vuepress build docs"
-  },
-  "devDependencies": {
-    "@vuepress/plugin-google-analytics": "^1.9.7",
-    "vuepress": "^1.8.1",
-    "vuepress-plugin-sitemap": "^2.3.1"
-  }
+	"scripts": {
+		"dev": "NODE_OPTIONS=--openssl-legacy-provider vuepress dev docs",
+		"build": "NODE_OPTIONS=--openssl-legacy-provider vuepress build docs"
+	},
+	"devDependencies": {
+		"@vuepress/plugin-google-analytics": "^1.9.7",
+		"chokidar": "^3.5.3",
+		"vuepress": "^1.8.1",
+		"vuepress-plugin-sitemap": "^2.3.1"
+	}
 }
