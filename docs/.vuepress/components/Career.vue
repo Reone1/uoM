@@ -19,7 +19,7 @@ const careers = [
 			{
 				title: "VPL app",
 				duration: "2020.8 ~ 2020.10",
-				description: "외부 packaging System과 Web service간 API연동 및 데이터 처리, 프",
+				description: "외부 packaging System과 Web service간 API연동 및 데이터 처리, 프로젝트",
 				stack: ["nextjs", "nestjs"],
 			},
 			{

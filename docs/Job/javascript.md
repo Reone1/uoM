@@ -13,15 +13,15 @@ _간단한 클로저 패턴 예시_
 
 ```js
 function couter() {
-  let count = 0;
-  return {
-    increase() {
-      return ++count;
-    },
-    decrease() {
-      return --count;
-    },
-  };
+	let count = 0;
+	return {
+		increase() {
+			return ++count;
+		},
+		decrease() {
+			return --count;
+		},
+	};
 }
 ```
 
@@ -55,58 +55,58 @@ web에서의 `this` 차제는 `window`를 나타내며, 하위 객체 안에서�
 
 ## ES6에 대해서 알고 계신가요? 사용하고 있는 ES6 feature들을 설명해 주세요
 
-- let, const keyword  
-  TDZ를 이용한 debuging에 효율적인 keyword 입니다. 기존에 var를 통한 변수 생성은 TDZ를 이용하지 않아 hoisting으로 인한 undefined를 연산하는 경우가 발생하거나 변수를 재선언하여 사용하는 문제들이 있었습니다.
-- Arrow Functions  
-  선언식 함수가 아닌 arrow function을 통한 함수 생성이 가능합니다. 조금더 직관적인 관계를 파악할 수 있으며, 일반적인 변수선언과 같은 방식으로 함수를 사용할 수 있습니다.
-- For/of  
-  배열을 순회할 수 있는 방식으로 해당 인덱스 순서에 따라 순회할 수 있습니다.
-- Map Objects  
-  리스트 형식의 데이터를 생성합니다.
-- Set Objects  
-  Set 형식의 데이터를 생성합니다.
-- Classes
-  es6에서 class를 생성하기 위한 template입니다. ES5의 class와는 차이가 있습니다.
-  [ref](https://typeof-undefined.tistory.com/7)
-- Promises  
-  Promise 객체는 javascript가 비동기처리에 대한 결과를 resolver, reject라는 핸들러를 통해 처리할 수 있도록 생성하게 합니다.
+-  let, const keyword  
+   TDZ를 이용한 debuging에 효율적인 keyword 입니다. 기존에 var를 통한 변수 생성은 TDZ를 이용하지 않아 hoisting으로 인한 undefined를 연산하는 경우가 발생하거나 변수를 재선언하여 사용하는 문제들이 있었습니다.
+-  Arrow Functions  
+   선언식 함수가 아닌 arrow function을 통한 함수 생성이 가능합니다. 조금더 직관적인 관계를 파악할 수 있으며, 일반적인 변수선언과 같은 방식으로 함수를 사용할 수 있습니다.
+-  For/of  
+   배열을 순회할 수 있는 방식으로 해당 인덱스 순서에 따라 순회할 수 있습니다.
+-  Map Objects  
+   리스트 형식의 데이터를 생성합니다.
+-  Set Objects  
+   Set 형식의 데이터를 생성합니다.
+-  Classes
+   es6에서 class를 생성하기 위한 template입니다. ES5의 class와는 차이가 있습니다.
+   [ref](https://typeof-undefined.tistory.com/7)
+-  Promises  
+   Promise 객체는 javascript가 비동기처리에 대한 결과를 resolver, reject라는 핸들러를 통해 처리할 수 있도록 생성하게 합니다.
 
-- Symbol  
-  심볼(symbol) 데이터 형은 원시 데이터 형(primitive data type)의 일종입니다. 값은 값을 가진 symbol을 생성하더라도 그 두 개의 심볼은 다른 참조 주소를 가지며 같은 형태의 object를 비교하는 것과 같은 결과를 얻게 됩니다.
+-  Symbol  
+   심볼(symbol) 데이터 형은 원시 데이터 형(primitive data type)의 일종입니다. 값은 값을 가진 symbol을 생성하더라도 그 두 개의 심볼은 다른 참조 주소를 가지며 같은 형태의 object를 비교하는 것과 같은 결과를 얻게 됩니다.
 
-  Symbol은 object의 key로 사용하여 유일한 값에 대한 데이터를 구성할 수 있습니다.
+   Symbol은 object의 key로 사용하여 유일한 값에 대한 데이터를 구성할 수 있습니다.
 
-- Default Parameters  
-  optional parameter 기본값을 설정해서 값이 없는 경우의 정해진 값을 사용할 수 있도록 한다.
-- Function Rest Parameter  
-  나머지 변수를 array에 담아 한번에 사용할 수 있다.
-  ```js
-  function add(...rest) {
-    return rest.reduce((acc, cur) => acc + cur);
-  }
-  ```
-- String.includes()  
-  문자열에 해당 문자열이 포함되어있는지 확인 하게 된다. `boolean`을 return합니다.
-  ```js
-  const testString = "Banana is Yellow";
-  console.log(testString.includes("is")); // true;
-  ```
-- String.startsWith()  
-  문자열이 특정 문자열로 시작하는지 확인합니다. `boolean`을 반환합니다
-- String.endsWith()  
-  문자열이 특정 문자열로 끝나는지 확인합니다. `boolean`을 반환합니다
-- Array.from()  
-  map처럼 사용할 수도 있고, 문자열을 통해서 배열을 만들 수 있습니다.
-  ```js
-  Array.from("12345"); // ['1', '2', '3', '4', '5']
-  Array.from(["a", "b", "c"], (x) => x + x); // ['aa', 'bb', 'cc']
-  ```
-- Array.keys()  
-  배열의 요소 index를 기반으로 `literate` 객체를 반환합니다.
-- Array.find()  
-  특정 값을 포함한 요소를 찾습니다. 요소(`element`)를 반환합니다.
-- Array.findIndex()  
-  특정 값을 포함한 요소의 `index를` 반환합니다.
+-  Default Parameters  
+   optional parameter 기본값을 설정해서 값이 없는 경우의 정해진 값을 사용할 수 있도록 한다.
+-  Function Rest Parameter  
+   나머지 변수를 array에 담아 한번에 사용할 수 있다.
+   ```js
+   function add(...rest) {
+   	return rest.reduce((acc, cur) => acc + cur);
+   }
+   ```
+-  String.includes()  
+   문자열에 해당 문자열이 포함되어있는지 확인 하게 된다. `boolean`을 return합니다.
+   ```js
+   const testString = "Banana is Yellow";
+   console.log(testString.includes("is")); // true;
+   ```
+-  String.startsWith()  
+   문자열이 특정 문자열로 시작하는지 확인합니다. `boolean`을 반환합니다
+-  String.endsWith()  
+   문자열이 특정 문자열로 끝나는지 확인합니다. `boolean`을 반환합니다
+-  Array.from()  
+   map처럼 사용할 수도 있고, 문자열을 통해서 배열을 만들 수 있습니다.
+   ```js
+   Array.from("12345"); // ['1', '2', '3', '4', '5']
+   Array.from(["a", "b", "c"], (x) => x + x); // ['aa', 'bb', 'cc']
+   ```
+-  Array.keys()  
+   배열의 요소 index를 기반으로 `literate` 객체를 반환합니다.
+-  Array.find()  
+   특정 값을 포함한 요소를 찾습니다. 요소(`element`)를 반환합니다.
+-  Array.findIndex()  
+   특정 값을 포함한 요소의 `index를` 반환합니다.
 
 ## let 과 var의 차이점과 활용도를 알려주세요
 
@@ -157,47 +157,47 @@ name = "reone1";
 
 모두 context와 관련이 있는 functiona prototype의 method이다.
 
-- `call`  
-  `call`은, 1인자로 context를 받고 나머지 인자를 통해 기존 함수의 변수를 받아 사용한다.
+-  `call`  
+   `call`은, 1인자로 context를 받고 나머지 인자를 통해 기존 함수의 변수를 받아 사용한다.
 
-  ```js
-  function Product(name, price) {
-    this.name = name;
-    this.price = price;
-  }
+   ```js
+   function Product(name, price) {
+   	this.name = name;
+   	this.price = price;
+   }
 
-  function Food(name, price) {
-    Product.call(this, name, price);
-    this.category = "food";
-  }
+   function Food(name, price) {
+   	Product.call(this, name, price);
+   	this.category = "food";
+   }
 
-  console.log(new Food("cheese", 5).name);
-  // expected output: "cheese"
-  // ref: MDN Functions.prototype.call
-  ```
+   console.log(new Food("cheese", 5).name);
+   // expected output: "cheese"
+   // ref: MDN Functions.prototype.call
+   ```
 
-  이처럼 선언된 Product함수의 this를 food의 this로 변경하여 실행하고 category라는 값을 추가하게 된다.
+   이처럼 선언된 Product함수의 this를 food의 this로 변경하여 실행하고 category라는 값을 추가하게 된다.
 
-- `apply`
-  `apply`는 `call`과 같이 `context`를 변경하고 변수를 할당할 수 있다.  
-  다만, `call`과 다르게 인자를 배열의 형태로 받는다. 때문에 단 2개의 인자를 받을 수 있다.
+-  `apply`
+   `apply`는 `call`과 같이 `context`를 변경하고 변수를 할당할 수 있다.  
+   다만, `call`과 다르게 인자를 배열의 형태로 받는다. 때문에 단 2개의 인자를 받을 수 있다.
 
-- `bind`
-  `bind`는 해당 함수를 호출하지 않고 context를 변경하는 역할을 한다.
-  함수를 특정 context에 맞춰 변경하고자 할 때, 변수에 할당하여 사용한다.
+-  `bind`
+   `bind`는 해당 함수를 호출하지 않고 context를 변경하는 역할을 한다.
+   함수를 특정 context에 맞춰 변경하고자 할 때, 변수에 할당하여 사용한다.
 
 ## 자기실행함수의 결과가 어떻게 나오나요?
 
 ```js
 (function () {
-  console.log(1);
-  setTimeout(function () {
-    console.log(2);
-  }, 1000);
-  setTimeout(function () {
-    console.log(3);
-  }, 0);
-  console.log(4);
+	console.log(1);
+	setTimeout(function () {
+		console.log(2);
+	}, 1000);
+	setTimeout(function () {
+		console.log(3);
+	}, 0);
+	console.log(4);
 })();
 ```
 
