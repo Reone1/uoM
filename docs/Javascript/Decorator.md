@@ -84,4 +84,4 @@ console.log(Object.getOwnPropertyDescriptor(oatmeal, "viscosity"));
 
 - [JavaScript Decorator 이해하기](https://wonism.github.io/what-is-decorator/)
 - [자바스크립트 데코레이터 이해하기](https://ui.toast.com/weekly-pick/ko_20200102)  
-  원글 [Understanding JavaScript Decorators](https://www.simplethread.com/understanding-js-decorators/)
+    원글 [Understanding JavaScript Decorators](https://www.simplethread.com/understanding-js-decorators/)
