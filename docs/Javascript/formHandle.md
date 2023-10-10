@@ -7,7 +7,7 @@ html form element를 사용하면서 form submit event를 통해 데이터를 �
 ```html
 <!DOCTYPE html>
 <html>
-  <head> </head>
+  <head>Submit Test Component</head>
   <body>
     <form onSubmit="onSubmitHandler" name="exampleForm">
       <input name="firstName" type="text" />
