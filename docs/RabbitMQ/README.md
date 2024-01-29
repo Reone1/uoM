@@ -9,3 +9,4 @@ Message는 다양한 역할로 사용할 수 있는데, 이벤트 트리거, 로
 ## RabbitMQ?
 
 Message Queue중 쉽게 사용할 수 있는 framework중 하나로, pub-sub 형식의 메시지 전달 방식을 가지고 있습니다.
+
