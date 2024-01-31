@@ -9,7 +9,9 @@
 git-flow는 배포, 개발, QA를 효과적으로 관리하기 위한 git 관리 전략중 하나입니다.
 
 git-flow는 다음과 같은 diagram을 통해서 표현할 수 있습니다.
-![git-flow](../src/github/gitflow.jpeg)
+
+![git-flow](../src/github/gitflow.jpeg ) *Branch Management Strategy*
+
 
 위와 같은 방식의 다중 브랜치를 통해서 현재 작업물의 상태를 어느정도 카테고리 형식으로 나눌 수 있습니다.
 
